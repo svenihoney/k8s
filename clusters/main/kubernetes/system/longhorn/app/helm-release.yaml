@@ -36,3 +36,13 @@ spec:
         defaultClass: true
         # Increase to 3 for a multi-node cluster
         defaultClassReplicaCount: 1
+      longhornUI:
+        # -- Replica count for Longhorn UI.
+        replicas: 1
+      csi:
+        # -- Replica count of the CSI Attacher. When unspecified, Longhorn uses the default value ("3").
+        attacherReplicaCount: 1
+        # -- Replica count of the CSI Provisioner. When unspecified, Longhorn uses the default value ("3").
+        provisionerReplicaCount: 1
+        # -- Replica count of the CSI Resizer. When unspecified, Longhorn uses the default value ("3").
+        resizerReplicaCount: 1
