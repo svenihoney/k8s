@@ -35,6 +35,18 @@ spec:
         externalTrafficPolicy: Local
         loadBalancerIP: ${HOME_ASSISTANT_IP}
         type: LoadBalancer
+    configmap:
+      init:
+        enabled: true
+        data:
+          # recorder.default: |-
+          #   recorder:
+          http.default: |-
+            http:
+              use_x_forwarded_for: true
+              trusted_proxies:
+                - ${PODNET}
+
     # cnpg:
     #   main:
     #     instances: 1
