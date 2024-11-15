@@ -47,13 +47,12 @@ spec:
               trusted_proxies:
                 - ${PODNET}
 
-    # cnpg:
-    #   main:
-    #     instances: 1
-    #     pooler:
-    #       instances: 1
-    #     monitoring:
-    #       enablePodMonitor: false
+    cnpg:
+      main:
+        cluster:
+          instances: 1
+          singleNode: true
+
     ingress:
       main:
         enabled: true
