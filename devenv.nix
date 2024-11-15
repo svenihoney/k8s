@@ -9,7 +9,16 @@
   env.KUBECONFIG = "/home/sven/.kube/config";
 
   # https://devenv.sh/packages/
-  packages = with pkgs; [fluxcd kubectl kustomize age kubernetes-helm cilium-cli];
+  packages = with pkgs; [
+    fluxcd
+    kubectl
+    talosctl
+    kustomize
+    age
+    kubernetes-helm
+    kubectl-node-shell
+    cilium-cli
+  ];
 
   # https://devenv.sh/languages/
   # languages.rust.enable = true;
@@ -24,6 +33,7 @@
 
   enterShell = ''
     export SOPS_AGE_KEY_FILE="$DEVENV_ROOT/age.agekey";
+    export TALOSCONFIG="$DEVENV_ROOT/clusters/main/talos/generated/talosconfig";
   '';
 
   # https://devenv.sh/tasks/
