@@ -82,24 +82,44 @@ spec:
         groups:
           - ads
 
+    customDNS:
+      customTTL: 1h
+      filterUnmappedTypes: true
+      rewrite: []
+      # - in: something.com
+      #   out: somethingelse.com
+      mapping:
+      - domain: fritzbox.leiderfischer.de
+        dnsserver: 192.168.11.1
+      - domain: video.fritz.box
+        dnsserver: 192.168.11.77
+      - domain: argocd.leiderfischer.de
+        dnsserver: 192.168.11.221
+
+    # -- set conditional settings
+    conditional:
+      mapping:
+      - domain: fritz.box
+        dnsserver: 192.168.11.1
+
     k8sgateway:
       # -- list of processed domains
       domains:
       - domain: "${DOMAIN_0}"
-      #   # -- Optional configuration option for DNS01 challenge that will redirect all acme
-      #   # challenge requests to external cloud domain (e.g. managed by cert-manager)
-      #   # See: https://cert-manager.io/docs/configuration/acme/dns01/
-        dnsChallenge:
-          enabled: false
-          domain: dns01.clouddns.com
+    #   #   # -- Optional configuration option for DNS01 challenge that will redirect all acme
+    #   #   # challenge requests to external cloud domain (e.g. managed by cert-manager)
+    #   #   # See: https://cert-manager.io/docs/configuration/acme/dns01/
+    #     dnsChallenge:
+    #       enabled: true
+    #       domain: dns01.clouddns.com
 
-      forward:
-        enabled: false
-        primary: dns://192.168.11.1
-        secondary: tls://1.0.0.1
-        options:
-          - name: tls_servername
-            value: cloudflare-dns.com
+    #   forward:
+    #     enabled: false
+    #     primary: dns://192.168.11.1
+    #     secondary: tls://1.0.0.1
+    #     options:
+    #       - name: tls_servername
+    #         value: cloudflare-dns.com
 
     # CANNOT be defined in above yaml section
     queryLog:
