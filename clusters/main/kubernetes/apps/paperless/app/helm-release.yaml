@@ -48,6 +48,11 @@ spec:
                 #     name: secrets
                 PAPERLESS_URL: https://dok.leiderfischer.de
                 PAPERLESS_WEBSERVER_WORKERS: 1
+    cnpg:
+      main:
+        cluster:
+          instances: 1
+          singleNode: true
     ingress:
       main:
         enabled: true
