@@ -11,3 +11,6 @@ creation_rules:
   - path_regex: talsecret.yaml
     age: age1zq9rvzhq3suqyxfpr25ak582jyzvv4r6ahlxry0l24k4f7mp655qm5cuk0
 ## DO NOT REMOVE: Personal setting go under this line
+  - path_regex: ^clusters.*kubernetes.*/token.ya?ml
+    age: age1zq9rvzhq3suqyxfpr25ak582jyzvv4r6ahlxry0l24k4f7mp655qm5cuk0
+    encrypted_regex: "((?i)(token))"

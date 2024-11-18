@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: home-assistant-tunnel-config
+  namespace: home-assistant
+data:
+  frpc.ini: |
+    [common]
+    server_addr = struppi.effeffcee.de
+    server_port = 7000
+    token = "{{ .Envs.FRP_STRUPPI_TOKEN }}"
+
+    [HA]
+    type = tcp
+    local_ip = home-assistant
+    local_port = 8123
+    remote_port = 7001
+    use_encryption = true

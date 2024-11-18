@@ -1,0 +1,28 @@
+apiVersion: v1
+data:
+    TOKEN: ENC[AES256_GCM,data:YDfdp20f6WiN0VLpqRhp11q8DSzXooPhlF5c2NsvrX4Z2P1R7FuWRIIwh8o=,iv:tAqNn1I/a3yO9IkS2j/cXh66nGGnoCos0AFzh/if5BM=,tag:msNfLK1hPwn/4T42ChQImw==,type:str]
+kind: Secret
+metadata:
+    namespace: home-assistant
+    name: home-assistant-tunnel-token
+sops:
+    shamir_threshold: 3
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1zq9rvzhq3suqyxfpr25ak582jyzvv4r6ahlxry0l24k4f7mp655qm5cuk0
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBzQkYzVUlVQ0hiV25YcnVD
+            b2o3QkNHTkdOdTVUZFlBN21mdEtwR0kyV2pVCitVdXArYUpxWlRUL0llK2YrQmx0
+            emlKdzV0UzdLVnUxTTdsNFRnZjRvdzAKLS0tIFVYVDBBQm1WeXN2YVUyckRsV2wx
+            b1FnL3Jwd1o3U2FHR0lhR29GazdBTzQKTzgDtm0UUxa8dcgwIU+v3RWlu5giRSU1
+            KSLatLx1VcbBbYoXy7ZuGLgqjMBdfUtzFWYonfXRhsdnWePyjH+LwQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-11-18T11:56:37Z"
+    mac: ENC[AES256_GCM,data:fxf8qo+/n9Cd2tkCTfeRWRMyBDXZA+Rtb/t0PSP2DE7cACproFQFsLlPZ4klIJl1rGQXyuWVzQUMBXDl1fH2i7ep6J36TwLTx3V/X6eYCGA9F/wvRWdducrOUuFziFaYXvPsdTehvJdEmdY0R/s1Z2uh2dZUBasLP5qi5gzMoY0=,iv:RVWUtSwG2ucgELTCYM9ef8Jxy03jERtkbfWHP8OEnOk=,tag:RvETPIPKkaTz0xkymq5JFA==,type:str]
+    pgp: []
+    encrypted_regex: ((?i)(token))
+    version: 3.9.1
