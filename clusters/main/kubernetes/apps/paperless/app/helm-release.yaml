@@ -30,6 +30,7 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    TZ: Europe/Berlin
     workload:
       main:
         podSpec:
