@@ -32,9 +32,60 @@ spec:
   values:
     ## set stopAll to "true" if you do not want to use traefik
     # and/or disable its service
-    global:
-      stopAll: false
-    defaultCertificate: "domain-0-wildcard"
+    # global:
+    #   stopAll: false
+    # defaultCertificate: "domain-0-wildcard"
+    # service:
+    #   tcp:
+    #     loadBalancerIP: ${TRAEFIK_IP}
+
+    TZ: Europe/Berlin
+    workload:
+      main:
+        replicas: 1
+        strategy: RollingUpdate
+
+    # ingressRoute:
+    #   dashboard:
+    #     enabled: true
+
+    logs:
+      # Traefik logs concern everything that happens to Traefik itself (startup, configuration, events, shutdown, and so on).
+      general:
+        # By default, the level is set to ERROR. Alternative logging levels are DEBUG, PANIC, FATAL, ERROR, WARN, and INFO.
+        level: DEBUG
+      access:
+        enabled: true
+    metrics:
+      main:
+        enabled: false
+
+    globalArguments:
+    #   - "--global.checknewversion"
+
+    additionalArguments:
+      - "--ping"
+      - "--api.insecure"
+      - "--providers.kubernetesingress.allowexternalnameservices=true"
+      - "--providers.kubernetescrd.allowexternalnameservices=true"
+      - "--serverstransport.insecureskipverify"
+      - "--entrypoints.websecure.http.tls=true"
+
     service:
       tcp:
-        loadBalancerIP: ${TRAEFIK_IP}
+        ipFamilyPolicy: RequireDualStack
+        # Additional annotations applied to both TCP and UDP services (e.g. for cloud provider specific config)
+        externalIPs:
+          - "45.132.247.116"
+          - "2a03:4000:48:5aa:4844:36ff:feeb:c58a"
+        ipFamilies:
+          - IPv4
+          - IPv6
+
+    portalhook:
+      enabled: false
+
+    portal:
+      open:
+        enabled: false
+        path: /dashboard/
