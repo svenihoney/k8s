@@ -1,0 +1,9 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+    name: aellwein
+    namespace: flux-system
+spec:
+    interval: 10m
+    url: https://aellwein.github.io/cert-manager-webhook-netcup/charts
+    timeout: 3m
