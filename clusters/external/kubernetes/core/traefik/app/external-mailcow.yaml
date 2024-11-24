@@ -27,7 +27,7 @@ spec:
   - websecure
   routes:
   - kind: Rule
-    match: Host(`mx1.effeffcee.de`,`autoconfig.effeffcee.de`,`autoconfig.leiderfischer.de`,`autodiscover.effeffcee.de`,`autodiscover.leiderfischer.de`)
+    match: HostRegexp(`(mx1|autoconfig|autodiscover)\.(effeffcee|leiderfischer).de`)
     services:
     - kind: Service
       name: mx1-ingress-svc

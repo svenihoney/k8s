@@ -24,3 +24,14 @@ spec:
         kind: ClusterIssuer
         name: letsencrypt-dns-prod
     secretName: leiderfischer-de-tls
+---
+apiVersion: traefik.io/v1alpha1
+kind: TLSStore
+metadata:
+    name: default # Only the store with the name default is taken into account
+    namespace: clusterissuer
+spec:
+    certificates:
+        - secretName: effeffcee-de-tls
+    defaultCertificate:
+        secretName: leiderfischer-de-tls
