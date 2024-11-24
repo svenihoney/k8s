@@ -21,7 +21,6 @@ metadata:
 spec:
     dnsNames:
         - '*.leiderfischer.de'
-        - 'leiderfischer.de'
     issuerRef:
         kind: ClusterIssuer
         name: letsencrypt-dns-prod
