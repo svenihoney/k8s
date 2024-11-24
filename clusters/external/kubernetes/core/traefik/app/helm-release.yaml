@@ -53,9 +53,9 @@ spec:
       # Traefik logs concern everything that happens to Traefik itself (startup, configuration, events, shutdown, and so on).
       general:
         # By default, the level is set to ERROR. Alternative logging levels are DEBUG, PANIC, FATAL, ERROR, WARN, and INFO.
-        level: DEBUG
+        level: INFO
       access:
-        enabled: true
+        enabled: false
     metrics:
       main:
         enabled: false
