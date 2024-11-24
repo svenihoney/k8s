@@ -31,7 +31,7 @@ spec:
     services:
     - kind: Service
       name: mx1-ingress-svc
-      namespace: backend
+      namespace: traefik
       passHostHeader: true
       port: 8443
       scheme: https
