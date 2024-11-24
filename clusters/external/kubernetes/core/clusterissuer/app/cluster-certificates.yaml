@@ -1,5 +1,5 @@
 ---
-apiVersion: clusterissuer.io/v1
+apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
     name: effeffcee-de
@@ -13,7 +13,7 @@ spec:
         name: letsencrypt-dns-prod
     secretName: effeffcee-de-tls
 ---
-apiVersion: clusterissuer.io/v1
+apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
     name: leiderfischer-de
