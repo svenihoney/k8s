@@ -31,6 +31,10 @@ spec:
     keepHistory: false
   values:
     TZ: Europe/Berlin
+    global:
+      fallbackDefaults:
+        pvcSize: 1G
+        vctSize: 1G
     workload:
       main:
         podSpec:
@@ -66,6 +70,10 @@ spec:
         cluster:
           instances: 1
           singleNode: true
+          storage:
+            size: 10Gi
+          wal_storage:
+            size: 1Gi
 
     ingress:
       main:
@@ -120,6 +128,10 @@ spec:
     keepHistory: false
   values:
     TZ: Europe/Berlin
+    global:
+      fallbackDefaults:
+        pvcSize: 1G
+        vctSize: 1G
     # service:
     #   main:
     #     externalTrafficPolicy: Local

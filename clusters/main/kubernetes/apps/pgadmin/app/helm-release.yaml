@@ -30,6 +30,10 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    global:
+      fallbackDefaults:
+        pvcSize: 1G
+        vctSize: 1G
     ingress:
       main:
         enabled: true
