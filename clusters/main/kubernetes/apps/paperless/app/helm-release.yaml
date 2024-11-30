@@ -31,6 +31,10 @@ spec:
     keepHistory: false
   values:
     TZ: Europe/Berlin
+    global:
+      fallbackDefaults:
+        pvcSize: 1G
+        vctSize: 1G
     workload:
       main:
         podSpec:
@@ -54,6 +58,11 @@ spec:
         cluster:
           instances: 1
           singleNode: true
+    persistence:
+      data:
+        size: 10Gi
+      media:
+        size: 10Gi
     ingress:
       main:
         enabled: true
