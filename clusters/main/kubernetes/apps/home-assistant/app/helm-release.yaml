@@ -72,8 +72,8 @@ spec:
           singleNode: true
           storage:
             size: 10Gi
-          wal_storage:
-            size: 1Gi
+          walStorage:
+            size: 5Gi
 
     ingress:
       main:
