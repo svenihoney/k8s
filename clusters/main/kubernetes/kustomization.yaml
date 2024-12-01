@@ -7,3 +7,5 @@ resources:
   - flux-system
   - kube-system
   - system
+  - argocd
+  - argocd-app.yaml

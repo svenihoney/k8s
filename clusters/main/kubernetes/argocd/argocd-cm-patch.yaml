@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+data:
+  # Enable helm for kustomize
+  kustomize.buildOptions: "--enable-helm"
