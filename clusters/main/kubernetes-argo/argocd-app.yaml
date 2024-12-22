@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    path: clusters/main/kubernetes
+    path: clusters/main/kubernetes-argo
     repoURL: https://github.com/svenihoney/k8s.git
     targetRevision: HEAD
   destination:
