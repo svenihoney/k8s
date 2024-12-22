@@ -9,3 +9,4 @@ resources:
   - system
   - argocd
   - argocd-app.yaml
+  - argocd-app-external.yaml
