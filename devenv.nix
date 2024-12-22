@@ -11,6 +11,7 @@
   # https://devenv.sh/packages/
   packages = with pkgs; [
     fluxcd
+    argocd
     kubectl
     talosctl
     kustomize

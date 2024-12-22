@@ -20,6 +20,7 @@ cniConfig:
     name: none
 patches:
     - '@./patches/all.yaml'
+    - '@./patches/storage.yaml'
 nodes:
     # We would adivce to always stick to a "k8s-something-1" style naming scheme
     - hostname: k8s-control-1
@@ -29,7 +30,7 @@ nodes:
         - 1.1.1.1
         - 8.8.8.8
       installDiskSelector:
-        size: "> 1600GB"
+        size: "< 1600GB"
       networkInterfaces:
         # suffix is the adapter mac adres.
         - interface: eth0
@@ -40,6 +41,10 @@ nodes:
               gateway: ${GATEWAY}
           vip:
             ip: ${VIP}
+      disks:
+      - device: /dev/sda
+        partitions:
+        - mountpoint: /var/mnt/storage
 controlPlane:
     patches:
         - '@./patches/controlplane.yaml'

@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: external
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    path: clusters/external/kubernetes
+    repoURL: https://github.com/svenihoney/k8s.git
+    targetRevision: HEAD
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
