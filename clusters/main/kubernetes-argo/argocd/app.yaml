@@ -10,5 +10,5 @@ spec:
     path: clusters/main/kubernetes-argo/argocd
     targetRevision: HEAD
   destination:
-    server: 'https://struppi.effeffcee.de:6443'
+    server: "https://kubernetes.default.svc"
     namespace: home-assistant
