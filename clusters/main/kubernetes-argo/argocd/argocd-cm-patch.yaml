@@ -5,3 +5,10 @@ metadata:
 data:
   # Enable helm for kustomize
   kustomize.buildOptions: "--enable-helm"
+  resource.exclusions: |
+    - apiGroups:
+      - "cilium.io" # no /v2 suffix or similar here...
+      kinds:
+      - "CiliumIdentity"
+      clusters:
+      - "*"
