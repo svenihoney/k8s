@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  project: default
+  sources:
+  - repoURL: https://github.com/svenihoney/k8s.git
+    path: clusters/main/kubernetes-argo/argocd
+    targetRevision: HEAD
+  destination:
+    server: 'https://struppi.effeffcee.de:6443'
+    namespace: home-assistant

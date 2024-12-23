@@ -31,9 +31,9 @@ spec:
               - path: /
                 pathType: Prefix
             tls: []
-  - repoURL: https://git.effeffcee.de/sven/argocd.git
+  - repoURL: https://github.com/svenihoney/k8s.git
     path: clusters/main/kubernetes-argo/apps/home-assistant/app
     targetRevision: HEAD
   destination:
-    server: 'https://struppi.effeffcee.de:6443'
+    server: "https://kubernetes.default.svc"
     namespace: home-assistant
