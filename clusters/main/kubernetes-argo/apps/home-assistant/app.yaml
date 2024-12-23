@@ -12,6 +12,7 @@ spec:
     repoURL: 'tccr.io/truecharts'
     targetRevision: 26.8.5
     helm:
+      skipTests: true
       values: |
         TZ: Europe/Berlin
         global:
@@ -35,7 +36,7 @@ spec:
             tls: []
             integrations:
               traefik:
-                enabled: false
+                enabled: true
   - repoURL: https://github.com/svenihoney/k8s.git
     path: clusters/main/kubernetes-argo/apps/home-assistant/app
     targetRevision: HEAD
