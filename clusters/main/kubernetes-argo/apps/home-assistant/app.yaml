@@ -28,7 +28,7 @@ spec:
           main:
             enabled: true
             hosts:
-            - host: nodered.leiderfischer.de
+            - host: smarthome.leiderfischer.de
               paths:
               - path: /
                 pathType: Prefix
