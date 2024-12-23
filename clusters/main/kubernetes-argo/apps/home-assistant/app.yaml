@@ -10,7 +10,7 @@ spec:
     repoURL: 'tccr.io/truecharts'
     targetRevision: 26.4.3
     helm:
-      values:
+      values: |
         TZ: Europe/Berlin
         global:
           fallbackDefaults:
