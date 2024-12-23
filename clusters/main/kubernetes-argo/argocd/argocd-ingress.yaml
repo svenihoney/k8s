@@ -14,11 +14,12 @@ spec:
         - name: argocd-server
           port: 80
     - kind: Rule
-      match: Host(`argocd.leiderfischer.de`) && Headers(`Content-Type`, `application/grpc`)
+      match: Host(`argocd.leiderfischer.de`) && Header(`Content-Type`, `application/grpc`)
       priority: 11
       services:
         - name: argocd-server
           port: 80
           scheme: h2c
   tls:
-    certResolver: default
+    domains:
+      - main: argocd.leiderfischer.de

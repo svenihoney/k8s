@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: home-assistant
+  namespace: argocd
+spec:
+  project: default
+  sources:
+  - chart: home-assistant
+    repoURL: 'tccr.io/truecharts'
+    targetRevision: 26.4.3
+    helm:
+      values:
+        TZ: Europe/Berlin
+        global:
+          fallbackDefaults:
+            pvcSize: 1G
+            vctSize: 1G
+        # service:
+        #   main:
+        #     externalTrafficPolicy: Local
+        #     loadBalancerIP: ${HOME_ASSISTANT_IP}
+        #     type: LoadBalancer
+
+        ingress:
+          main:
+            enabled: true
+            hosts:
+            - host: nodered.leiderfischer.de
+              paths:
+              - path: /
+                pathType: Prefix
+            tls: []
+  - repoURL: https://git.effeffcee.de/sven/argocd.git
+    path: clusters/main/kubernetes-argo/apps/home-assistant/app
+    targetRevision: HEAD
+  destination:
+    server: 'https://struppi.effeffcee.de:6443'
+    namespace: home-assistant
