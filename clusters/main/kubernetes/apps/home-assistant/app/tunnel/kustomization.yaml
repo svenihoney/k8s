@@ -1,0 +1,6 @@
+---
+namespace: home-assistant
+resources:
+- ./configmap.yaml
+- ./deployment.yaml
+- ./token.yaml

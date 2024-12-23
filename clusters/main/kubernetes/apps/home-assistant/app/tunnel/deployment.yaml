@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: home-assistant
+  name: home-assistant-tunnel
+  labels:
+    app: home-assistant-tunnel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: home-assistant-tunnel
+  template:
+    metadata:
+      labels:
+        app: home-assistant-tunnel
+    spec:
+      containers:
+      - name: frpc
+        image: snowdreamtech/frpc:0.45.0
+        env:
+        - name: FRP_STRUPPI_TOKEN
+          valueFrom:
+              secretKeyRef:
+                key: TOKEN
+                name: home-assistant-tunnel-token
+        volumeMounts:
+          - name: home-assistant-tunnel-config
+            mountPath: /etc/frp
+        resources:
+          requests:
+            cpu: 100m
+            memory: "128M"
+          limits:
+            cpu: 100m
+            memory: "256M"
+      volumes:
+      - name: home-assistant-tunnel-config
+        configMap:
+          name: home-assistant-tunnel-config
+          items:
+          - key: frpc.ini
+            path: frpc.ini
