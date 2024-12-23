@@ -3,12 +3,14 @@ kind: Application
 metadata:
   name: home-assistant
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/compare-options: ServerSideDiff=false
 spec:
   project: default
   sources:
   - chart: home-assistant
     repoURL: 'tccr.io/truecharts'
-    targetRevision: 26.4.3
+    targetRevision: 26.8.5
     helm:
       values: |
         TZ: Europe/Berlin
@@ -31,6 +33,9 @@ spec:
               - path: /
                 pathType: Prefix
             tls: []
+            integrations:
+              traefik:
+                enabled: false
   - repoURL: https://github.com/svenihoney/k8s.git
     path: clusters/main/kubernetes-argo/apps/home-assistant/app
     targetRevision: HEAD

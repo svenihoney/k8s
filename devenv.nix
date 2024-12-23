@@ -19,6 +19,7 @@
     kubernetes-helm
     kubectl-node-shell
     cilium-cli
+    kubeseal
   ];
 
   # https://devenv.sh/languages/
