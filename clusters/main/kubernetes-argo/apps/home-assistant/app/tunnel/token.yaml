@@ -6,30 +6,9 @@ metadata:
     namespace: home-assistant
 spec:
     encryptedData:
-        TOKEN: ENC[AES256_GCM,data:cbzhNbxw+w/bx9KsJH5quIrtNWg80zQzteGV9SVlo9H6/Q/wcXclyrNVN2i7823LkHYE5FBBLJilfwKQ/rn/05f42nDeTkW6npbhBAFHkx9GSI/Boisnc9m0C+xQc+PVunuyi5RxpXhJNrU2OWM4r78wXxsGRJtW5X5aYq9h7YGgM63ghstRaM6ncdFmvee9P2KSTsLj6yF6chjgEQlNIrr9+PYNKkvA0mq4Nk1uJBr+2fxx1SnAqtyS+URrGhgTwKlVe8GScGQngqKTsj9iyh+1erY/L66sFdgQ+FLRsVMd+iCnr3HgwHNHiW+Ykh8nxGFfkyVpUFTK4aHGWjWJZA3I4GkeKLhjGcsYnS5OJQ0BcTU7/leVSamRDs+CIqrIrzyuc8C4YtMJm+SlbLlR4D6vMevNnRPmjfDnuehITGksq8Z36+eNzjjW7riawBYn7Gz36USaWKcKqZfKS/+sHbGqD2IQtcLkvWGJmZKpEsi83hAjuU7OO+q4vHrzHceTzXrmihSZQ6gVt5Syw4wW7SxIgoqdYBiriIHuxWbiwBjERqFHQJtGLPJezccqfsHaQbGgIQPErkuR/zVGCXytaEiMTDbMppVkgBNG/sHkkdWmVuC4DFwnHq5KPDeIvrUDi/ySNCXTjtxjxHXmLZsL9Q3egiSHN/Z9uCyhNxW+lJzjeMuVYjnCSQVSfjeliIbDhGywIIEo+bu8jvrB0hKtONqIVHNMM8SWmCDiLLmwutVHicW0Mt/IiykEO20+1/h9UUls9dfFPZwxeObNxJUssx6/x8se9tW6bqM76psAZ9t3GXu5W1/AWWEU2ahgYaks3ichOv9r5K3DhGpHT4zo9njEcezIStmOXiOWnphYSHRZMDXbIfe/Ph/MUplbjIogC/YYN9zMFqlrqY4Y0pVCCwd9cizM/PncNsE8vatZjSkXgOY3duu5ri6/S1E9zCAOO1S33wQl8RzA0wCls3BYOMMbugkao19gEYvTeuWfFhI=,iv:2VbWMOCakSjS/sWOyg1wJsbCbvlDvpWnnA+AXdRwuac=,tag:juTouh+8+BxQBZ9C0Lf/Mg==,type:str]
+        TOKEN: AgDdmMlGCNr6LaW7v0iJIhyX47IJR3t5wXckOlud7pCACxlfrtho4RYY5EpX4rTaqFbDzRATyg10R94TNeVgyv1+jlI1ARwZGaIlL8aFOg0lT3NkgTP1Wh94oLSb3PqUInj5GMdrHa8eFs0fI+Y/h2+Er1uTSqTonvDti3aBQwghUz4RtNXPvk0l0w7nO6wJ7ojZnEJGtBmfIv465374tRfvuKWRtR3taIkRjv2dpS4Vdphg761xa7vKMc0xjcGi6yEdXzAuL+mRAhJLN/IfDBi32l+E1qLzxB/PhTzqEGOAFjObUahtKfK6sk7NkC4tBHJAlabIWMSRQhfJpeQSSQ9iGRTaZniRa0CjHmSdTnz+57+2RT+50+NpHYoHoVgWZrKF7iKDwOVNU22jSAjEFjQ8sKx0g+dBGZeo1+FPz4RUHa5zvgCW4dyJ8ml5jkIi8/EkJTCogSNpt7oO3Rya4d5ICzA5C7RdtgFgjCtAuyhCWMclr1wv3yoFiFukmisVktXnYkqQnas6QHVuo8HGQzSJ/y+iWY6IuL944pRoclDCueMPY9vuMvJaraMS62uoyMKpqiuxpT7xHFizswCXoweYiJhf9MsFS92r73PjtJ7o0I3EkFaDk8SD0eDn8nk5pDnY/mu/JMz8cUiJ8u+SXuQpNO7pQTOj6V++5JC1FSmUnAGpM6U8p/bgEFP9LYIt7EGoe74NGXVu/0yYXFCfaMM5cUQDvepSy/nVMShGlf7vYHs=
     template:
         metadata:
             creationTimestamp: null
             name: home-assistant-tunnel-token
             namespace: home-assistant
-sops:
-    shamir_threshold: 3
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age:
-        - recipient: age1zq9rvzhq3suqyxfpr25ak582jyzvv4r6ahlxry0l24k4f7mp655qm5cuk0
-          enc: |
-            -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA4RC8wVzZhZEd6eXh4Ykp5
-            Zkx5M2J1WXBZU1RkL21PQzVSaWZodzZEalNBCmdINWxDTStoS0VuV1dVUFZ4M0pt
-            NkUraExwUStQY2V2UmdwNWt2WUMvcjgKLS0tIFlVb1hRbElUc1hYSWtnT3dadkgv
-            aUpNN0VBQTlVZExSNk1KSGF5R25qVFEKvtNa19wxTyLDxLlgG0CCVZYb+n3SDXB1
-            tOHTx+JoPypgZRaSmRlPc0ujioT3lBhm3mwwqbS2GBE/VdDBj0p5mA==
-            -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-12-23T03:30:41Z"
-    mac: ENC[AES256_GCM,data:TRxnWolaLbt7PZ403J8U2yNLaP7oso5r9IjrX5+WZ8cmrRFX1nSjfyuc9/CtwDqn5R8tkbtwdOEE+CXILKK/0Ey25+LebDbKzoz8A9LrW+a2uAMVM7eOQnLMIKtUkjwA4rYEnrdSfT39WkSnDRwfftPDja+HcO/gjNSmpxVdXVI=,iv:1iUbmTPd3UsMrgyExXyCUlAnwdYmbUECzU5363kUQ+o=,tag:QfcF1YJJyGYKkcA9Uxe0eQ==,type:str]
-    pgp: []
-    encrypted_regex: ((?i)(token))
-    version: 3.9.1
