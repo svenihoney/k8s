@@ -73,7 +73,7 @@ spec:
           storage:
             size: 10Gi
           wal_storage:
-            size: 1Gi
+            size: 2Gi
 
     ingress:
       main:

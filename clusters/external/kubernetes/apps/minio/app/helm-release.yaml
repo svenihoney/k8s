@@ -1,0 +1,67 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: minio
+  namespace: minio
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: minio
+      version: 13.10.0
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  driftDetection:
+    mode: warn
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    TZ: Europe/Berlin
+    global:
+      fallbackDefaults:
+        pvcSize: 50G
+        vctSize: 50G
+    # workload:
+    #   main:
+    #     podSpec:
+    #       containers:
+    #         main:
+    #           advanced: false
+    #           env:
+    #             PAPERLESS_ADMIN_MAIL: ""
+    #             PAPERLESS_ADMIN_PASSWORD: foo
+    #             PAPERLESS_ADMIN_USER: sven
+    #             PAPERLESS_OCR_LANGUAGE: deu
+    #             PAPERLESS_OCR_LANGUAGES: deu eng
+    #             # PAPERLESS_SECRET_KEY:
+    #             #   secretKeyRef:
+    #             #     key: PAPERLESS_SECRET_KEY
+    #             #     name: secrets
+    #             PAPERLESS_URL: https://dok.leiderfischer.de
+    #             PAPERLESS_WEBSERVER_WORKERS: 1
+    persistence:
+      config:
+        size: 50Gi
+    ingress:
+      main:
+        enabled: true
+        hosts:
+        - host: s3.leiderfischer.de
+          paths:
+          - path: /
+            pathType: Prefix
+        tls: []
