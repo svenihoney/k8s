@@ -1,0 +1,20 @@
+apiVersion: volsync.backube/v1alpha1
+kind: ReplicationSource
+metadata:
+   name: replication-source-pgadmin
+   namespace: pgadmin
+spec:
+   sourcePVC: pgadmin-config
+   trigger:
+      schedule: "*/5 * * * *"
+   restic:
+     pruneIntervalDays: 1
+     repository: restic-config-pgadmin
+     retain:
+       hourly: 1
+       daily: 1
+       weekly: 0
+       monthly: 0
+       yearly: 0
+     copyMethod: Snapshot
+     cacheCapacity: 1G
