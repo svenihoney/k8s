@@ -9,7 +9,7 @@ spec:
         spec:
 
             chart: volsync
-            version: 2.5.1
+            version: 2.x
             sourceRef:
                 kind: HelmRepository
                 name: truecharts
@@ -22,3 +22,5 @@ spec:
     upgrade:
         remediation:
             retries: 3
+    values:
+        TZ: Europe/Berlin
