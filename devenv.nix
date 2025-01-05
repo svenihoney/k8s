@@ -27,6 +27,7 @@
 
   # https://devenv.sh/processes/
   # processes.cargo-watch.exec = "cargo-watch";
+  scripts.clustertool.exec = "$DEVENV_ROOT/bin/clustertool $@";
 
   # https://devenv.sh/services/
   # services.postgres.enable = true;
