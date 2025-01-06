@@ -35,29 +35,27 @@ spec:
       fallbackDefaults:
         pvcSize: 50G
         vctSize: 50G
-    # workload:
-    #   main:
-    #     podSpec:
-    #       containers:
-    #         main:
-    #           advanced: false
-    #           env:
-    #             PAPERLESS_ADMIN_MAIL: ""
-    #             PAPERLESS_ADMIN_PASSWORD: foo
-    #             PAPERLESS_ADMIN_USER: sven
-    #             PAPERLESS_OCR_LANGUAGE: deu
-    #             PAPERLESS_OCR_LANGUAGES: deu eng
-    #             # PAPERLESS_SECRET_KEY:
-    #             #   secretKeyRef:
-    #             #     key: PAPERLESS_SECRET_KEY
-    #             #     name: secrets
-    #             PAPERLESS_URL: https://dok.leiderfischer.de
-    #             PAPERLESS_WEBSERVER_WORKERS: 1
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                MINIO_BROWSER_REDIRECT_URL: "https://minio.leiderfischer.de"
+                # MINIO_SERVER_URL: "https://minio.leiderfischer.de"
     persistence:
       config:
         size: 50Gi
     ingress:
       main:
+        enabled: true
+        hosts:
+        - host: minio.leiderfischer.de
+          paths:
+          - path: /
+            pathType: Prefix
+        tls: []
+      api:
         enabled: true
         hosts:
         - host: s3.leiderfischer.de
