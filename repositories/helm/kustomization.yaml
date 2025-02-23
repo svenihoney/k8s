@@ -18,6 +18,7 @@ resources:
   - longhorn.yaml
   - metallb.yaml
   - metrics-server.yaml
+  - nextcloud.yaml
   - node-feature-discovery.yaml
   - nvidia.yaml
   - openebs.yaml
