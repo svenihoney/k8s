@@ -31,10 +31,10 @@ spec:
     keepHistory: false
   values:
     TZ: Europe/Berlin
-    # global:
-    #   fallbackDefaults:
-    #     pvcSize: 1Gi
-    #     vctSize: 1Gi
+    global:
+      fallbackDefaults:
+        pvcSize: 100Gi
+        vctSize: 100Gi
     cnpg:
       main:
         cluster:
