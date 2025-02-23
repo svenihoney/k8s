@@ -4,3 +4,4 @@ resources:
   # - kubernetes-dashboard/ks.yaml
   - minio/ks.yaml
   - party100/ks.yaml
+  - nextcloud/ks.yaml
