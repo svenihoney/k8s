@@ -97,6 +97,7 @@ spec:
       auth:
         password: 'asxdgx3tx-3t'
       replica:
+        enabled: false
         replicaCount: 1
 
     cronjob:
