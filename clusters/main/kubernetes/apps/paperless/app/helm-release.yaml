@@ -33,8 +33,8 @@ spec:
     TZ: Europe/Berlin
     global:
       fallbackDefaults:
-        pvcSize: 1G
-        vctSize: 1G
+        pvcSize: 1Gi
+        vctSize: 1Gi
     workload:
       main:
         podSpec:
@@ -58,6 +58,10 @@ spec:
         cluster:
           instances: 1
           singleNode: true
+          storage:
+              size: 2Gi
+          walStorage:
+              size: 2Gi
     persistence:
       data:
         size: 10Gi
