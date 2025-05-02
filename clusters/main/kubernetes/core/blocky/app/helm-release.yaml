@@ -113,6 +113,8 @@ spec:
         dnsserver: 192.168.11.77
       - domain: argocd.leiderfischer.de
         dnsserver: 192.168.11.211
+      - domain: homeassistant.leiderfischer.de
+        dnsserver: 45.132.247.116
 
     # -- set conditional settings
     conditional:
