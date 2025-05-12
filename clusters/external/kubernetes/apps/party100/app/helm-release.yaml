@@ -8,8 +8,8 @@ spec:
   interval: 15m
   chart:
     spec:
-      chart: wordpress
-      version: 9.14.8
+      chart: static-web-server
+      version: 6.10.1
       sourceRef:
         kind: HelmRepository
         name: truecharts
@@ -35,13 +35,6 @@ spec:
       fallbackDefaults:
         pvcSize: 1G
         vctSize: 1G
-    wordpress:
-      user: sven
-      pass: unbekannt
-      email: sven@leiderfischer.de
-      first_name: Sven
-      last_name: Fischer
-      blog_name: Party 100
     ingress:
       main:
         enabled: true
