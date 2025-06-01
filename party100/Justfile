@@ -1,0 +1,2 @@
+update:
+     helm upgrade --install --wait party100 --namespace party100 --create-namespace --values values.yaml oci://ghcr.io/cfpb/static-site
