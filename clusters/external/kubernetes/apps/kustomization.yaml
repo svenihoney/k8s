@@ -5,4 +5,5 @@ resources:
   - minio/ks.yaml
   # - party100/ks.yaml
   - nextcloud/ks.yaml
+  - nextcloud2/ks.yaml
   - tandoor/ks.yaml
