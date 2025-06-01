@@ -38,6 +38,7 @@ spec:
     nextcloud:
       general:
         default_phone_region: DE
+        accessIP: "127.0.0.1"
       previews:
         enabled: false
     ingress:
@@ -52,12 +53,12 @@ spec:
     workload:
       notify:
         enabled: true
-      imginary:
-        enabled: false
-      clamav:
-        enabled: false
-      collabora:
-        enabled: false
+    imginary:
+      enabled: false
+    clamav:
+      enabled: false
+    collabora:
+      enabled: false
     persistence:
       data:
         size: 50Gi
