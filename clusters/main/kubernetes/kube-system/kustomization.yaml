@@ -3,8 +3,10 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - cilium/ks.yaml
-  - multus/ks.yaml
   - descheduler/ks.yaml
   - kubelet-csr-approver/ks.yaml
   - metrics-server/ks.yaml
   - node-feature-discovery/ks.yaml
+
+  - multus/ks.yaml
+  - weave-gitops/ks.yaml
