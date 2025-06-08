@@ -12,7 +12,7 @@ spec:
     interval: 15m
     chart:
         spec:
-            chart: multus
+            chart: multus-cni
             version: 2.2.15
             sourceRef:
                 kind: HelmRepository
