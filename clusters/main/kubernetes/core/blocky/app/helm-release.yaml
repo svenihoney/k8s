@@ -115,6 +115,12 @@ spec:
         dnsserver: 192.168.11.211
       - domain: homeassistant.leiderfischer.de
         dnsserver: 45.132.247.116
+      - domain: ha.leiderfischer.de
+        dnsserver: 192.168.11.154
+      - domain: nr.leiderfischer.de
+        dnsserver: 192.168.11.154
+      - domain: dok2.leiderfischer.de
+        dnsserver: 192.168.11.154
 
     # -- set conditional settings
     conditional:
